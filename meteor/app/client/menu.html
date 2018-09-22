@@ -14,13 +14,15 @@ Copyright (c) 2014 Mozilla Corporation
                 <li><a class="mozdef" href="/" title="MOZDEF">MOZDEF</a></li>
                 {{#if currentUser}}
                 <li> <a target="_blank" href={{mozdef.kibanaURL}}>Kibana</a>
-                    <ul>
-                        <li class="first">
-                            {{#each kibanadashboards as item}}
-                                {{>kibanaDashboardItem}}
-                            {{/each}}
-                        </li>
-                    </ul>
+                    {{#if kibanadashboards.count}}
+                      <ul>
+                          <li class="first">
+                              {{#each kibanadashboards as item}}
+                                  {{>kibanaDashboardItem}}
+                              {{/each}}
+                          </li>
+                      </ul>
+                    {{/if}}
                 </li>
                 <li><a href="/alerts/">Alerts</a>
                     <ul>
